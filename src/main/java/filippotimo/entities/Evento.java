@@ -27,6 +27,7 @@ public class Evento {
     private long id; // long corrisponde al tipo biginteger (a meno di non specificare diversamente)
 
     @Column(name = "nome_evento", nullable = false, length = 50)
+    // lenght = 50 serve per impostare la lunghezza massima a 50 caratteri
     private String titolo;
 
     @Column(name = "data_evento", nullable = false)

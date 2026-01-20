@@ -9,9 +9,10 @@
 
         <!-- Il nome della Persistence Unit è importante perché nel codice Java dovremo richiamarla per nome-->
 
-        
-        <!-- TODO: Aggiungi elenco delle entities -->
 
+        <!-- TODO: Aggiungi elenco delle entities -->
+        <!-- Ogni volta che creo una nuova Entity la devo mettere qui in un tag <class> </class>-->
+        <class>filippotimo.entities.Evento</class>
 
         <properties>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/gestioneeventi"/>

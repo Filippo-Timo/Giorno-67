@@ -50,11 +50,12 @@ public class Evento {
         // leggeremo delle righe dalla tabella
     }
 
-    public Evento(String titolo, LocalDate dataEvento, String descrizione, tipoEvento tipoEvento) {
+    public Evento(String titolo, LocalDate dataEvento, String descrizione, tipoEvento tipoEvento, int numeroMassimoPartecipanti) {
         this.titolo = titolo;
         this.dataEvento = dataEvento;
         this.descrizione = descrizione;
         this.tipoEvento = tipoEvento;
+        this.numeroMassimoPartecipanti = numeroMassimoPartecipanti;
     }
 
     public long getId() {

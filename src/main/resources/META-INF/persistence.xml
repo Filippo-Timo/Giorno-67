@@ -3,8 +3,13 @@
              xmlns="http://xmlns.jcp.org/xml/ns/persistence"
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
     <persistence-unit name="gestioneeventipu">
+        <!-- La persistence-unit rappresenta praticamente la connessione al db, quindi la chiamerò sempre con il nome del db al quale-->
+        <!-- sto cercando di connettermi ("gestioneeventi" in questo caso che è il nome del db che ho creato) + "pu" finale che sarebbe -->
+        <!-- l'abbreviazione di persistence-unit -->
+
         <!-- Il nome della Persistence Unit è importante perché nel codice Java dovremo richiamarla per nome-->
 
+        
         <!-- TODO: Aggiungi elenco delle entities -->
 
 

@@ -3,6 +3,7 @@ package filippotimo;
 import filippotimo.dao.EventiDAO;
 import filippotimo.entities.Evento;
 import filippotimo.entities.tipoEvento;
+import filippotimo.exceptions.NotFoundException;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
@@ -29,19 +30,44 @@ public class Application {
         Evento terzoEvento = new Evento("Compleanno Pupo", LocalDate.of(2025, 11, 27), "Il compleanno più atteso dell'anno", tipoEvento.Privato, 300);
         Evento quartoEvento = new Evento("Compleanno Filippo", LocalDate.of(2025, 12, 6), "Il mio compleanno", tipoEvento.Privato, 30);
         Evento quintoEvento = new Evento("Compleanno Rita", LocalDate.of(2025, 7, 9), "Il compleanno di Rita", tipoEvento.Privato, 40);
-        System.out.println(primoEvento);
-        System.out.println(secondoEvento);
-        System.out.println(terzoEvento);
-        System.out.println(quartoEvento);
-        System.out.println(quintoEvento);
+//        System.out.println(primoEvento);
+//        System.out.println(secondoEvento);
+//        System.out.println(terzoEvento);
+//        System.out.println(quartoEvento);
+//        System.out.println(quintoEvento);
 
+        // --------------------------------------------- SAVE ---------------------------------------------
         // ! ! ! Ogni volta che salvo un nuovo oggetto nel DB devo commentare o eliminare la riga del save perché sennò mi salverebbe
         // nuovamente gli oggetti nel DB creando dei ripetuti ogni volta che runno la console ! ! !
-//        eventoDao.save(primoEvento);
-//        eventoDao.save(secondoEvento);
-//        eventoDao.save(terzoEvento);
-//        eventoDao.save(quartoEvento);
-//        eventoDao.save(quintoEvento);
+        //        eventoDao.save(primoEvento);
+        //        eventoDao.save(secondoEvento);
+        //        eventoDao.save(terzoEvento);
+        //        eventoDao.save(quartoEvento);
+        //        eventoDao.save(quintoEvento);
+
+        // --------------------------------------------- FIND BY ID ---------------------------------------------
+        try {
+
+            Evento testFindById = eventoDao.findById(3);
+            System.out.println(testFindById);
+
+        } catch (NotFoundException exception) {
+
+            System.out.println(exception.getMessage());
+
+        }
+
+        // --------------------------------------------- FIND BY ID AND DELETE ---------------------------------------------
+        try {
+
+            eventoDao.findByIdAndDeleted(3);
+
+        } catch (NotFoundException exception) {
+
+            System.out.println(exception.getMessage());
+
+        }
+
 
         // Best Practice. Quando finisco di utilizzare delle risorse come Scanner, EntityManager, EntityManagerFactory, ecc è sempre consigliato chiuderle
         // (nel nostro caso è irrilevante perché l'applicazione si avvia e poi si chiude rilasciando tutte le risorse automaticamente)
